@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-white text-navy-900 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+  .badge-demo {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-warning-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-warning-700 ring-1 ring-warning-200;
+  }
+  .badge-demo-dark {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-warning-300 ring-1 ring-white/15;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f5fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #bcd4e8;
+  border-radius: 8px;
+  border: 2px solid #f0f5fa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8fb8d8;
+}
+
+/* Recharts tooltip cleanup */
+.recharts-default-tooltip {
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 8px 24px -8px rgba(11, 31, 58, 0.16) !important;
+}
